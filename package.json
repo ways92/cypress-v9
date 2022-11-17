@@ -1,0 +1,28 @@
+{
+  "name": "cypress-v9",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cypress:open": "cypress open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ways92/cypress-v9.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ways92/cypress-v9/issues"
+  },
+  "homepage": "https://github.com/ways92/cypress-v9#readme",
+  "dependencies": {
+    "cypress": "^9.6.0"
+  },
+  "devDependencies": {
+    "cypress-downloadfile": "^1.2.3",
+    "cypress-file-upload": "^5.0.8",
+    "cypress-xpath": "^2.0.1"
+  }
+}
