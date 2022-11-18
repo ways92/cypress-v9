@@ -1,5 +1,6 @@
 /// <reference types="cypress" />
 require( 'cypress-xpath' );
+const dataLogin = require( '../../fixtures/DataLogin.json' )
 const loginPage = require( '../pageObject/loginPage' )
 const lp = new loginPage()
 
@@ -13,7 +14,7 @@ describe( 'Login test', () => {
         cy.get( '#flash' ).contains( 'You logged into a secure area!' )
     });
     
-    it.only('Login POM', () => {
+    it('Login POM', () => {
         lp.goToWeb()
         lp.enterUsername('tomsmith')
         lp.enterPassword('SuperSecretPassword!')
@@ -21,4 +22,17 @@ describe( 'Login test', () => {
         lp.verifyLogin('You logged into a secure area!')
     });
     
+    dataLogin.forEach( data => { 
+        it.only( `login POM with data driven ${data.case}`, () => {
+            lp.goToWeb()
+            if ( data.username != "" ) {
+                lp.enterUsername(data.username)
+            }
+            if ( data.password != "" ) { 
+                lp.enterPassword(data.password)
+            }
+            lp.clickLogin()
+            lp.verifyLogin(data.verification)
+        });
+    });
 });
