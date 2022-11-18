@@ -1,0 +1,26 @@
+[
+    {
+        "case": "valid data",
+        "username": "tomsmith",
+        "password": "SuperSecretPassword!",
+        "verification": "You logged into a secure area!"
+    },
+    {
+        "case": "empty username",
+        "username": "",
+        "password": "SuperSecretPassword!",
+        "verification": "Your username is invalid!"
+    },
+    {
+        "case": "empty password",
+        "username": "tomsmith",
+        "password": "",
+        "verification": "Your password is invalid!"
+    },
+    {
+        "case": "empty username and password",
+        "username": "",
+        "password": "",
+        "verification": "Your username is invalid!"
+    }
+]
