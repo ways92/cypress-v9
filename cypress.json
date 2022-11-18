@@ -1,0 +1,15 @@
+{
+    "chromeWebSecurity": false,
+    "defaultCommandTimeout": 10000,
+    "video": true,
+    "execTimeout": 30000,
+    "watchForFileChanges": false,
+    "reporter": "mochawesome",
+    "reporterOptions": {
+        "charts": false,
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "reportDir": "cypress/reports"
+    }
+}
