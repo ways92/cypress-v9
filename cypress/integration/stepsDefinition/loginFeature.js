@@ -1,21 +1,24 @@
 import { And, Given, Then, When } from 'cypress-cucumber-preprocessor/steps'
+require( 'cypress-xpath' );
+const loginPage = require( '../pageObject/loginPage' )
+const lp = new loginPage
 
 Given('I navigate to login page', () => {
-  cy.visit('https://www.saucedemo.com/')
+  lp.goToWeb()
 })
 
 When('I enter username', () => {
-  cy.get('#user-name').type('standard_user')
+  lp.enterUsername('standard_user')
 })
 
 And('I enter password', () => {
-  cy.get('#password').type('secret_sauce')
+  lp.enterPassword('secret_sauce')
 })
 
 And('I click login button', () => {
-  cy.get('#login-button').click()
+  lp.clickLogin()
 })
 
 Then('I verify login', () => {
-    cy.get('#item_4_img_link').should('be.visible')
+    lp.verifyLogin('Sauce Labs Backpack')
 })
