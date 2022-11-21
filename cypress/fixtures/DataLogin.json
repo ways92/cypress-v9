@@ -1,26 +1,26 @@
 [
     {
         "case": "valid data",
-        "username": "tomsmith",
-        "password": "SuperSecretPassword!",
-        "verification": "You logged into a secure area!"
+        "username": "standard_user",
+        "password": "secret_sauce",
+        "verification": "Sauce Labs Backpack"
     },
     {
         "case": "empty username",
         "username": "",
-        "password": "SuperSecretPassword!",
-        "verification": "Your username is invalid!"
+        "password": "secret_sauce",
+        "verification": "Epic sadface: Username is required"
     },
     {
         "case": "empty password",
         "username": "tomsmith",
         "password": "",
-        "verification": "Your password is invalid!"
+        "verification": "Epic sadface: Password is required"
     },
     {
         "case": "empty username and password",
         "username": "",
         "password": "",
-        "verification": "Your username is invalid!"
+        "verification": "Epic sadface: Username is required"
     }
 ]

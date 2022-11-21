@@ -7,23 +7,26 @@ const lp = new loginPage()
 describe( 'Login test', () => {
     
     it('Login valid data', () => {
-        cy.visit( 'https://the-internet.herokuapp.com/login' )
-        cy.get( '#username' ).type( 'tomsmith' )
-        cy.get( '#password' ).type( 'SuperSecretPassword!' )
-        cy.xpath( `//i[contains(text(),'Login')]` ).click()
-        cy.get( '#flash' ).contains( 'You logged into a secure area!' )
-    });
+        cy.visit( 'https://www.saucedemo.com/' )
+        cy.get( '#user-name' ).type( 'standard_user' )
+        cy.get( '#password' ).type( 'secret_sauce' )
+        cy.xpath( `//input[@id='login-button']` ).click()
+        cy.get( '#item_4_title_link > .inventory_item_name' ).contains('Sauce Labs Backpack')
+        cy.get( '#item_4_title_link > .inventory_item_name' ).invoke( 'text' ).then( ( textnya ) => {
+            cy.log(textnya)
+        })
+    } );
     
-    it('Login POM', () => {
+    it('Login POM valid data', () => {
         lp.goToWeb()
-        lp.enterUsername('tomsmith')
-        lp.enterPassword('SuperSecretPassword!')
+        lp.enterUsername('standard_user')
+        lp.enterPassword('secret_sauce')
         lp.clickLogin()
-        lp.verifyLogin('You logged into a secure area!')
+        lp.verifyLogin('Sauce Labs Backpack')
     });
     
     dataLogin.forEach( data => { 
-        it.only( `login POM with data driven ${data.case}`, () => {
+        it( `login POM with data driven ${data.case}`, () => {
             lp.goToWeb()
             if ( data.username != "" ) {
                 lp.enterUsername(data.username)
