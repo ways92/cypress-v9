@@ -6,25 +6,34 @@ class LoginPage{
     messageErrorLogin = `[data-test="error"]`
     
     goToWeb() {
-        cy.visit('https://www.saucedemo.com/')
+        cy.visit( 'https://www.saucedemo.com/' )
+        return this
     }
+
     enterUsername(username) {
-        cy.get(this.fieldUsername).type(username)
+        cy.get( this.fieldUsername ).type( username )
+        return this
     }
+
     enterPassword(pass) {
-        cy.get(this.fieldPassword).type(pass)
+        cy.get( this.fieldPassword ).type( pass )
+        return this
     }
+
     clickLogin() {
         cy.xpath(this.buttonLogin).click()
+        return this
     }
+
     verifyLogin( messageAppear ) {
         if (messageAppear==='Sauce Labs Backpack') {
-            cy.get(this.messageLogin).contains(messageAppear)
-        }
-        else if (messageAppear === 'Epic sadface: Username is required' || messageAppear === 'Epic sadface: Password is required') {
-            cy.get(this.messageErrorLogin).contains(messageAppear)
+            cy.get( this.messageLogin ).contains( messageAppear )
+            
+        }else if (messageAppear === 'Epic sadface: Username is required' || 'Epic sadface: Password is required') {
+            cy.get( this.messageErrorLogin ).contains( messageAppear )
+            
         } else {
-            cy.log('ERROR LOGIN CANNOT HANDLE')
+            cy.log('ERROR, CANNOT HANDLE LOGIN ')
         }
     }
 }
