@@ -7,9 +7,10 @@
     "reporter": "mochawesome",
     "reporterOptions": {
         "charts": false,
-        "overwrite": false,
+        "overwrite": true,
         "html": true,
         "json": true,
         "reportDir": "cypress/reports"
-    }
+    },
+    "testFiles": "**/*.feature"
 }

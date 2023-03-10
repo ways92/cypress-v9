@@ -26,15 +26,9 @@ class LoginPage{
     }
 
     verifyLogin( messageAppear ) {
-        if (messageAppear==='Sauce Labs Backpack') {
-            cy.get( this.messageLogin ).contains( messageAppear )
-            
-        }else if (messageAppear === 'Epic sadface: Username is required' || 'Epic sadface: Password is required') {
-            cy.get( this.messageErrorLogin ).contains( messageAppear )
-            
-        } else {
-            cy.log('ERROR, CANNOT HANDLE LOGIN ')
-        }
+        (messageAppear==='Sauce Labs Backpack') ? cy.get( this.messageLogin ).contains( messageAppear )
+        : (messageAppear === 'Epic sadface: Username is required' || 'Epic sadface: Password is required') ? cy.get( this.messageErrorLogin ).contains( messageAppear )
+        : cy.log('ERROR, CANNOT HANDLE LOGIN ')
     }
 }
 
