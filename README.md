@@ -4,3 +4,4 @@ Used technologies / Tools
 - Page Object Model
 - Cucumber
 - Data Driven Testing
+- Mochawesome
