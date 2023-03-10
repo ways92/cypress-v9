@@ -5,3 +5,4 @@ Used technologies / Tools
 - Cucumber
 - Data Driven Testing
 - Mochawesome
+- GitHub Actions
